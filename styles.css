@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-blue-100: hsl(225, 100%, 94%);
+  --clr-blue-700: hsl(245, 75%, 52%);
+  --clr-blue-hover: hsl(245, 83%, 68%);
+
+
+  --clr-blue-50: hsl(225, 100%, 98%);
+  --clr-gray-600: hsl(224, 23%, 55%);
+  --clr-blue-950: hsl(223, 47%, 23%);
+
+
+  --fs-body: 1rem;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+  --radius-card: 1.25rem;
+  --radius-button: 0.75rem;
+  --shadow-card: 0 1.25rem 2.5rem hsla(223, 47%, 23%, 0.2);
+  --shadow-btn: 0 1.25rem 1.25rem hsla(245, 75%, 52%, 0.2);
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: var(--fs-body);
+  margin: 0;
+  
+  display: grid;
+  place-items: center;
+  min-block-size: 100dvb;
+  padding-inline: 1.5rem;
+  
+  background-color: var(--clr-blue-100);
+  background-image: url('./images/pattern-background-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (min-width: 48rem) {
+  body {
+    background-image: url('./images/pattern-background-desktop.svg');
+    background-size: 100% 50dvb;
+  }
+}
+
+.card {
+  background-color: white;
+  inline-size: min(100%, 28.125rem); 
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.hero-img {
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 450 / 220;
+}
+
+.card-body {
+  padding-block: 2.8rem; 
+  padding-inline: clamp(1.5rem, 8%, 3rem); 
+  text-align: center;
+}
+
+
+.hero-title {
+  color: var(--clr-blue-950);
+  font-weight: var(--fw-black);
+  font-size: 1.75rem;
+  margin-block-end: 1rem;
+}
+
+.hero-description {
+  color: var(--clr-gray-600);
+  font-weight: var(--fw-medium);
+  margin-block-end: 1.5rem;
+  line-height: 1.6;
+}
+
+
+.plan-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-blue-50);
+  padding: 1.5rem;
+  border-radius: var(--radius-button);
+  margin-block-end: 2rem;
+}
+
+.plan-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.plan-text {
+  text-align: left;
+}
+
+.plan-name {
+  display: block;
+  color: var(--clr-blue-950);
+  font-weight: var(--fw-black);
+}
+
+.plan-price {
+  color: var(--clr-gray-600);
+}
+
+.change-link {
+  color: var(--clr-blue-700);
+  font-weight: var(--fw-bold);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.change-link:hover {
+  color: var(--clr-blue-hover);
+  text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.proceed-btn {
+  inline-size: 100%;
+  padding-block: 1rem;
+  background-color: var(--clr-blue-700);
+  color: white;
+  font-weight: var(--fw-black);
+  border: none;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: background-color 0.2s ease;
+}
+
+.proceed-btn:hover {
+  background-color: var(--clr-blue-hover);
+}
+
+.cancel-btn {
+  background: transparent;
+  border: none;
+  color: var(--clr-gray-600);
+  font-weight: var(--fw-black);
+  padding-block: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cancel-btn:hover {
+  color: var(--clr-blue-950);
+}
+
+:focus-visible {
+  outline: 3px dashed var(--clr-blue-700);
+  outline-offset: 4px;
+}
